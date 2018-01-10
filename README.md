@@ -14,4 +14,4 @@ It will spit out HTML so you can either run it as a CGI, or pipe into some html 
 It uses http://listjs.com/ for table sorting/filtering.
 
 
-Demo: http://stats.m1nd.io/
+Demo: http://stats.m1nd.io/pcars2.html
