@@ -74,6 +74,11 @@
         "class" : "G40 Junior"
       },
       {
+        "id" : 345014385,
+        "name" : "Ferrari 488 Challenge (NA)",
+        "class" : "Ferrari Series"
+      },
+      {
         "id" : 366881611,
         "name" : "Ford GT",
         "class" : "Road B"
@@ -137,6 +142,11 @@
         "id" : 728234598,
         "name" : "Acura NSX",
         "class" : "Road C"
+      },
+      {
+        "id" : 754463374,
+        "name" : "Ferrari 488 Challenge (APAC)",
+        "class" : "Ferrari Series"
       },
       {
         "id" : 761457895,
@@ -264,6 +274,11 @@
         "class" : "Group 5"
       },
       {
+        "id" : 1218201782,
+        "name" : "Porsche 908/03 Spyder",
+        "class" : "Vintage Prototype B"
+      },
+      {
         "id" : 1219511257,
         "name" : "Audi R18 e-tron quattro (2014)",
         "class" : "LMP1"
@@ -377,6 +392,11 @@
         "id" : 1470929381,
         "name" : "Audi 90 quattro IMSA GTO",
         "class" : "GTO"
+      },
+      {
+        "id" : 1471547500,
+        "name" : "Ferrari 488 Challenge (EU)",
+        "class" : "Ferrari Series"
       },
       {
         "id" : 1481115672,
@@ -594,6 +614,11 @@
         "class" : "Vintage F1 B"
       },
       {
+        "id" : -1835136516,
+        "name" : "Porsche 917K",
+        "class" : "Vintage Prototype A"
+      },
+      {
         "id" : -1796949190,
         "name" : "Ford Escort RS1600 (Rallycross)",
         "class" : "Vintage RX"
@@ -654,6 +679,11 @@
         "class" : "GT4"
       },
       {
+        "id" : -1523189681,
+        "name" : "Porsche 917/10",
+        "class" : "CanAm"
+      },
+      {
         "id" : -1522922538,
         "name" : "Mercedes-AMG A 45 4MATIC",
         "class" : "Road E"
@@ -662,6 +692,11 @@
         "id" : -1488131398,
         "name" : "Jaguar XJR-9 LM",
         "class" : "Group C1"
+      },
+      {
+        "id" : -1470867259,
+        "name" : "Porsche Carrera GT",
+        "class" : "Road C"
       },
       {
         "id" : -1459535564,
@@ -709,6 +744,11 @@
         "class" : "Road D"
       },
       {
+        "id" : -1295853198,
+        "name" : "Porsche 911 RSR",
+        "class" : "GTE"
+      },
+      {
         "id" : -1275144817,
         "name" : "Mercedes-AMG A 45 SMS-R Touring",
         "class" : "Touring Car"
@@ -717,6 +757,16 @@
         "id" : -1273964900,
         "name" : "Ferrari 333 SP",
         "class" : "LMP900"
+      },
+      {
+        "id" : -1270234648,
+        "name" : "Porsche 935/78",
+        "class" : "Group 5"
+      },
+      {
+        "id" : -1268030897,
+        "name" : "Porsche 959 S",
+        "class" : "Road E"
       },
       {
         "id" : -1253474718,
@@ -824,6 +874,11 @@
         "class" : "GT1"
       },
       {
+        "id" : -807187208,
+        "name" : "Porsche 911 Carrera RSR 2.8",
+        "class" : "Vintage Touring-GT A"
+      },
+      {
         "id" : -782532739,
         "name" : "BMW M6 GTLM",
         "class" : "GTE"
@@ -897,6 +952,11 @@
         "id" : -439539835,
         "name" : "Formula X",
         "class" : "Formula X"
+      },
+      {
+        "id" : -424432241,
+        "name" : "Porsche 935/78-81",
+        "class" : "Group 5"
       },
       {
         "id" : -387045855,
