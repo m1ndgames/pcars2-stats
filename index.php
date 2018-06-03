@@ -7,11 +7,7 @@ if (mysqli_connect_errno())
 echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-if ($_POST['showreal'] == "true") {
-	$result = mysqli_query($con,"SELECT * FROM results WHERE aid_drivingline = 'false' AND aid_clutch = 'false' AND aid_gears = 'false' AND aid_brakes = 'false'  AND aid_steering = 'false' AND aid_dmg = 'false' ORDER BY lap_time;");
-} else {
-	$result = mysqli_query($con,"SELECT * FROM results res JOIN ( SELECT steamid, car_id, MIN(lap_time) AS min_lap_time FROM results GROUP BY steamid, car_id ) grouped_res ON res.steamid = grouped_res.steamid AND res.car_id = grouped_res.car_id AND res.lap_time = grouped_res.min_lap_time");
-}
+$result = mysqli_query($con,"SELECT * FROM results res JOIN ( SELECT steamid, car_id, MIN(lap_time) AS min_lap_time FROM results GROUP BY steamid, car_id ) grouped_res ON res.steamid = grouped_res.steamid AND res.car_id = grouped_res.car_id AND res.lap_time = grouped_res.min_lap_time");
 
 echo '<head>
 <link rel=\'stylesheet\' type=\'text/css\' href=\'css/pcars2-stats.css\'>
@@ -25,31 +21,17 @@ echo '<div id="results">
 <button class="sort" data-sort="car">Car</button>
 <button class="sort" data-sort="carclass">Class</button>
 <button class="sort" data-sort="laptime">Lap Time</button>
-<button class="sort" data-sort="sector1">Sector 1</button>
-<button class="sort" data-sort="sector2">Sector 2</button>
-<button class="sort" data-sort="sector3">Sector 3</button>
 <button class="sort" data-sort="date">Date</button>
+<button class="sort" data-sort="track">Track</button>
 </tr>';
 
 echo '<tr>';
-if ($_POST['showreal'] == "true") {
-echo '<form action="index.php" method="post">
-    <input type="hidden" name="showreal" value="false" />
-    <input type="submit" name="submit" value="All Driving Aids" />
-</form>';
-} else {
-echo '<form action="index.php" method="post">
-    <input type="hidden" name="showreal" value="true" />
-    <input type="submit" name="submit" value="Real Driving Aids" />
-</form>';
-}
-
 echo '<input class="search" placeholder="Filter" />
 
 </tr>
 </table>';
 
-echo '<table><tbody class="list"><tr class=\'top\'><td>Name</td><td>Car</td><td>Class</td><td>Lap Time</td><td>Sector 1</td><td>Sector 2</td><td>Sector 3</td><td>Date</td><td>Controls</td><td>Setup</td><td>Aids</td></tr>';
+echo '<table><tbody class="list"><tr class=\'top\'><td>Name</td><td>Car</td><td>Class</td><td>Lap Time</td><td>Date</td><td>Controls</td><td>Setup</td><td>Aids</td><td>Track</td></tr>';
 
 while($row = mysqli_fetch_array($result))
 {
@@ -58,9 +40,6 @@ echo "<td class='name'><a href=\"https://steamcommunity.com/profiles/" . $row['s
 echo "<td class='car'>" . $row['car_name'] . "</td>";
 echo "<td class='carclass'>" . $row['car_class'] . "</td>";
 echo "<td class='laptime'>" . $row['lap_time_converted'] . "</td>";
-echo "<td class='sector1'>" . $row['sector_1_time_converted'] . "</td>";
-echo "<td class='sector2'>" . $row['sector_2_time_converted'] . "</td>";
-echo "<td class='sector3'>" . $row['sector_3_time_converted'] . "</td>";
 echo "<td class='date'>" . $row['event_time_converted'] . "</td>";
 
 echo "<td class='controls'>";
@@ -116,6 +95,7 @@ if ($row['aid_abs'] == "true") {
 
 echo "</td>";
 
+echo "<td class='track'>" . $row['track_name'] . "</td>";
 
 echo "</tr>";
 }
@@ -126,7 +106,7 @@ echo '</tbody>
 <div id="show"></div>
 
 <script>
-var options = { valueNames: [ \'name\', \'car\', \'carclass\', \'laptime\', \'sector1\', \'sector2\', \'sector3\', \'date\' ] };
+var options = { valueNames: [ \'name\', \'car\', \'carclass\', \'laptime\', \'date\' ] };
 var resultsList = new List(\'results\', options);
 </script>';
 
